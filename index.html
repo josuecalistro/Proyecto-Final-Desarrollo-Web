@@ -1,95 +1,167 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Formulario de contacto</title>
+
     <link rel="stylesheet" href="css/styles.css">
 </head>
+
 
 <body>
 
 <header class="header">
-    <h1>Formulario de contacto</h1>
-    <p>Completá tus datos para comunicarte con nosotros.</p>
+    <h1 class="header__titulo">Formulario de contacto</h1>
+    <p class="header__descripcion">
+        Completa tus datos y nos comunicaremos contigo.
+    </p>
 </header>
 
-<main class="container">
 
-    <form class="formulario" id="formulario">
+<main class="contenedor">
 
-    <fieldset>
-        <legend>Datos personales</legend>
+    <form class="formulario">
 
-        <div class="formulario__campo">
-            <label for="nombre">Nombre completo</label>
+        <fieldset class="formulario__grupo">
+
+            <legend class="formulario__titulo">
+                Datos personales
+            </legend>
+
+
+            <label class="formulario__label" for="nombre">
+                Nombre completo
+            </label>
 
             <input 
-            type="text"
-            id="nombre"
-            name="nombre"
-            required
-            minlength="3">
-            aria-describedby="errorNombre">
-
-            <small id="errorNombre"></small>
-        </div>
+                class="formulario__input"
+                type="text"
+                id="nombre"
+                name="nombre"
+                placeholder="Ingrese su nombre"
+                required>
 
 
-        <div class="formulario__campo">
-
-            <label for="email">
+            <label class="formulario__label" for="email">
                 Correo electrónico
             </label>
 
             <input 
-                type="text"
-                id="nombre"
-                name="nombre"
-                required
-                minlength="3">
+                class="formulario__input"
+                type="email"
+                id="email"
+                name="email"
+                placeholder="ejemplo@gmail.com"
+                required>
 
-            <small id="errorEmail"></small>
+
+            <label class="formulario__label" for="telefono">
+                Teléfono
+            </label>
+
+            <input 
+                class="formulario__input"
+                type="tel"
+                id="telefono"
+                name="telefono"
+                placeholder="Ingrese su teléfono">
+
+        </fieldset>
+
+
+
+        <fieldset class="formulario__grupo">
+
+            <legend class="formulario__titulo">
+                Consulta
+            </legend>
+
+
+            <label class="formulario__label" for="categoria">
+                Motivo de contacto
+            </label>
+
+            <select 
+                class="formulario__input"
+                id="categoria"
+                name="categoria">
+
+                <option value="">
+                    Seleccionar
+                </option>
+
+                <option value="consulta">
+                    Consulta general
+                </option>
+
+                <option value="soporte">
+                    Soporte técnico
+                </option>
+
+                <option value="otro">
+                    Otro
+                </option>
+
+            </select>
+
+
+            <label class="formulario__label" for="mensaje">
+                Mensaje
+            </label>
+
+            <textarea
+                class="formulario__input formulario__textarea"
+                id="mensaje"
+                name="mensaje"
+                placeholder="Escriba su mensaje"
+                required></textarea>
+
+
+        </fieldset>
+
+
+        <div class="formulario__terminos">
+
+            <input 
+                type="checkbox"
+                id="acepto"
+                required>
+
+            <label for="acepto">
+                Acepto los términos y condiciones
+            </label>
 
         </div>
-        <div>
-            <button 
-            class="formulario__boton" 
+
+
+
+        <button 
+            class="formulario__boton"
             type="submit">
+
             Enviar formulario
-            </button>
-        </div>
 
-    </fieldset>
+        </button>
 
 
-    <fieldset>
+    </form>
 
-        <legend>Mensaje</legend>
-
-        <label for="mensaje">
-            Escriba su consulta
-        </label>
-
-        <textarea
-            id="mensaje"
-            name="mensaje"
-            required
-            minlength="10">
-        </textarea>
-
-        <small id="errorMensaje"></small>
-
-    </fieldset>
-
-
-    <button type="submit">
-        Enviar
-    </button>
-
-</form>
 
 </main>
-<script src="js/validation.js"></script>
+
+
+<footer class="footer">
+
+    <p>
+        Proyecto realizado con HTML y CSS
+    </p>
+
+</footer>
+
+
 </body>
+
 </html>
