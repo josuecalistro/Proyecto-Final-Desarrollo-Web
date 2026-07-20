@@ -32,5 +32,23 @@
         border:none;
 
     }
+    input,
+    textarea {
+
+        padding:12px;
+        border:1px solid #ccc;
+        border-radius:5px;
+
+
+        &:valid {
+        border-color: green;
+        }
+
+
+        &:invalid {
+        border-color: red;
+        }
+
+    }
 
 }
