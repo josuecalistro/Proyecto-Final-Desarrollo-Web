@@ -32,9 +32,20 @@
             </legend>
 
 
-            <label class="formulario__label" for="nombre">
+            <label for="nombre">
                 Nombre completo
             </label>
+
+            <input 
+                    class="formulario__input"
+                    type="text"
+                    id="nombre"
+                    name="nombre"
+                    minlength="3"
+                    maxlength="30"
+                    pattern="[A-Za-zÁÉÍÓÚáéíóúñÑ ]+"
+                    aria-required="true"
+                    required>
 
             <input 
                 class="formulario__input"
@@ -49,12 +60,13 @@
                 Correo electrónico
             </label>
 
-            <input 
+            <input
                 class="formulario__input"
                 type="email"
                 id="email"
                 name="email"
-                placeholder="ejemplo@gmail.com"
+                pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+                aria-required="true"
                 required>
 
 
@@ -113,11 +125,14 @@
             </label>
 
             <textarea
-                class="formulario__input formulario__textarea"
+                class="formulario__input"
                 id="mensaje"
                 name="mensaje"
-                placeholder="Escriba su mensaje"
-                required></textarea>
+                minlength="10"
+                maxlength="300"
+                aria-required="true"
+                required>
+            </textarea>
 
 
         </fieldset>
@@ -161,7 +176,7 @@
 
 </footer>
 
-
+<script src="js/validation.js"></script>
 </body>
 
 </html>

@@ -1,17 +1,10 @@
 # Archivos temporales
-*.log
-*.tmp
-
-# Dependencias de Node (si en el futuro usás npm)
 node_modules/
 
-# Archivos compilados
 dist/
+
 build/
 
-# Archivos del sistema
-.DS_Store
-Thumbs.db
+*.log
 
-# Configuraciones locales de editores
-.vscode/
+*.tmp
