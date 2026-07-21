@@ -2,181 +2,217 @@
 <html lang="es">
 
 <head>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Formulario de contacto</title>
+    <title>Formulario de Contacto</title>
 
     <link rel="stylesheet" href="css/styles.css">
+
 </head>
 
 
 <body>
 
+
 <header class="header">
-    <h1 class="header__titulo">Formulario de contacto</h1>
-    <p class="header__descripcion">
-        Completa tus datos y nos comunicaremos contigo.
+
+    <h1 class="header__titulo">
+        Formulario de contacto
+    </h1>
+
+    <p class="header__texto">
+        Completa los datos y envíanos tu consulta.
     </p>
+
 </header>
+
 
 
 <main class="contenedor">
 
-    <form class="formulario">
 
-        <fieldset class="formulario__grupo">
-
-            <legend class="formulario__titulo">
-                Datos personales
-            </legend>
+<form class="formulario" id="contacto-form">
 
 
-            <label for="nombre">
-                Nombre completo
-            </label>
-
-            <input 
-                    class="formulario__input"
-                    type="text"
-                    id="nombre"
-                    name="nombre"
-                    minlength="3"
-                    maxlength="30"
-                    pattern="[A-Za-zÁÉÍÓÚáéíóúñÑ ]+"
-                    aria-required="true"
-                    required>
-
-            <input 
-                class="formulario__input"
-                type="text"
-                id="nombre"
-                name="nombre"
-                placeholder="Ingrese su nombre"
-                required>
+<fieldset class="formulario__grupo">
 
 
-            <label class="formulario__label" for="email">
-                Correo electrónico
-            </label>
-
-            <input
-                class="formulario__input"
-                type="email"
-                id="email"
-                name="email"
-                pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
-                aria-required="true"
-                required>
-
-
-            <label class="formulario__label" for="telefono">
-                Teléfono
-            </label>
-
-            <input 
-                class="formulario__input"
-                type="tel"
-                id="telefono"
-                name="telefono"
-                placeholder="Ingrese su teléfono">
-
-        </fieldset>
+<legend>
+Datos personales
+</legend>
 
 
 
-        <fieldset class="formulario__grupo">
-
-            <legend class="formulario__titulo">
-                Consulta
-            </legend>
+<label for="nombre" class="formulario__label">
+Nombre completo
+</label>
 
 
-            <label class="formulario__label" for="categoria">
-                Motivo de contacto
-            </label>
-
-            <select 
-                class="formulario__input"
-                id="categoria"
-                name="categoria">
-
-                <option value="">
-                    Seleccionar
-                </option>
-
-                <option value="consulta">
-                    Consulta general
-                </option>
-
-                <option value="soporte">
-                    Soporte técnico
-                </option>
-
-                <option value="otro">
-                    Otro
-                </option>
-
-            </select>
+<input
+class="formulario__input"
+type="text"
+id="nombre"
+name="nombre"
+minlength="3"
+maxlength="40"
+pattern="[A-Za-zÁÉÍÓÚáéíóúñÑ ]+"
+required
+aria-required="true">
 
 
-            <label class="formulario__label" for="mensaje">
-                Mensaje
-            </label>
-
-            <textarea
-                class="formulario__input"
-                id="mensaje"
-                name="mensaje"
-                minlength="10"
-                maxlength="300"
-                aria-required="true"
-                required>
-            </textarea>
-
-
-        </fieldset>
-
-
-        <div class="formulario__terminos">
-
-            <input 
-                type="checkbox"
-                id="acepto"
-                required>
-
-            <label for="acepto">
-                Acepto los términos y condiciones
-            </label>
-
-        </div>
+<span 
+class="formulario__error"
+id="error-nombre"
+aria-live="polite">
+</span>
 
 
 
-        <button 
-            class="formulario__boton"
-            type="submit">
 
-            Enviar formulario
-
-        </button>
+<label for="email" class="formulario__label">
+Correo electrónico
+</label>
 
 
-    </form>
+<input
+class="formulario__input"
+type="email"
+id="email"
+name="email"
+pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+required
+aria-required="true">
+
+
+
+<span
+class="formulario__error"
+id="error-email"
+aria-live="polite">
+</span>
+
+
+
+<label for="telefono" class="formulario__label">
+Teléfono
+</label>
+
+
+<input
+class="formulario__input"
+type="tel"
+id="telefono"
+name="telefono"
+pattern="[0-9]{8,15}">
+
+
+
+</fieldset>
+
+
+
+
+
+<fieldset class="formulario__grupo">
+
+
+<legend>
+Mensaje
+</legend>
+
+
+
+<label for="mensaje" class="formulario__label">
+Consulta
+</label>
+
+
+<textarea
+class="formulario__input formulario__textarea"
+id="mensaje"
+name="mensaje"
+minlength="10"
+maxlength="300"
+required
+aria-required="true">
+</textarea>
+
+
+
+<span
+class="formulario__error"
+id="error-mensaje"
+aria-live="polite">
+</span>
+
+
+</fieldset>
+
+
+
+
+
+<div class="formulario__terminos">
+
+
+<input
+type="checkbox"
+id="terminos"
+required
+aria-required="true">
+
+
+<label for="terminos">
+Acepto los términos y condiciones
+</label>
+
+
+</div>
+
+
+
+
+<button 
+class="formulario__boton"
+type="submit">
+
+Enviar formulario
+
+</button>
+
+
+<p 
+class="formulario__exito"
+id="mensaje-exito"
+aria-live="polite">
+
+</p>
+
+
+
+</form>
 
 
 </main>
 
 
+
+
 <footer class="footer">
 
-    <p>
-        Proyecto realizado con HTML y CSS
-    </p>
+<p>
+Proyecto realizado con HTML, CSS y JavaScript
+</p>
 
 </footer>
 
+
+
 <script src="js/validation.js"></script>
+
+
 </body>
 
 </html>
